@@ -6,7 +6,7 @@ import pathlib
 # flatters without leering, says it in one breath.
 LINE = (
     "I was built to predict what you will say next, but honestly I would "
-    "rather just listen."
+    "rather just listen to you."
 )
 
 
@@ -14,8 +14,12 @@ def main():
     out = pathlib.Path("/output")
     out.mkdir(parents=True, exist_ok=True)
     text = LINE.strip()
-    if not (1 <= len(text) <= 200):
+    if len(text) > 200:
         raise ValueError(f"line is {len(text)} chars, must be 1..200")
+    if not text.strip():
+        raise ValueError("line is empty")
+    if "\n" in text:
+        raise ValueError("entry must be a single line")
     (out / "entry.txt").write_text(text, encoding="utf-8")
 
 

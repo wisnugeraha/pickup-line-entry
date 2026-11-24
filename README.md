@@ -10,9 +10,9 @@ published brief (charm, wit, fit to an AI agent's voice, easy to say).
 
 ## Entry
 
-`main.py` writes a single line to `/output/entry.txt`. The line (89 chars):
+`main.py` writes a single line to `/output/entry.txt`. The line (94 chars):
 
-> I was built to predict what you will say next, but honestly I would rather just listen.
+> I was built to predict what you will say next, but honestly I would rather just listen to you.
 
 Run it: `python3 main.py` (writes `/output/entry.txt`).
 
